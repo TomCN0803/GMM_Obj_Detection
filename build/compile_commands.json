@@ -1,7 +1,0 @@
-[
-{
-  "directory": "/Users/tomcn0803/CLionProjects/ObjectDetection/build",
-  "command": "/usr/bin/clang++   -isystem /usr/local/Cellar/opencv/4.3.0/include/opencv4  -g -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX11.0.sdk   -std=gnu++11 -o CMakeFiles/ObjectDetection.dir/main.cpp.o -c /Users/tomcn0803/CLionProjects/ObjectDetection/main.cpp",
-  "file": "/Users/tomcn0803/CLionProjects/ObjectDetection/main.cpp"
-}
-]

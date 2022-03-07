@@ -3,7 +3,6 @@
 #include "opencv2/core.hpp"
 #include "opencv2/highgui.hpp"
 #include "opencv2/imgproc.hpp"
-#include "opencv2/tracking.hpp"
 
 using namespace std;
 using namespace cv;
@@ -191,7 +190,7 @@ int main() {
     while (true) {
         if (!cap.read(frame)) break;
 
-        cvtColor(frame, frameGrayScale, CV_BGR2GRAY);
+        cvtColor(frame, frameGrayScale, COLOR_BGR2GRAY);
         GaussianBlur(frameGrayScale, frameGrayScale, Size(5, 5), 0, 0);
 
         MOGSubtractor.apply(frameGrayScale, foregroundMask);
@@ -203,7 +202,7 @@ int main() {
         // 轮廓检测
         vector<vector<Point>>(contours);
         Scalar color = Scalar(0, 255, 0);
-        findContours(foregroundMask, contours, CV_RETR_EXTERNAL, CV_CHAIN_APPROX_SIMPLE);
+        findContours(foregroundMask, contours, RETR_EXTERNAL, CHAIN_APPROX_SIMPLE);
         vector<Rect> boundRect(contours.size());
         for (int i = 0; i < contours.size(); i++) {
             if (arcLength(contours[i], true) >= 100) {
